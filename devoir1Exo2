@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<body>
+<h1 align="center">Liste des Produits</h1>
+<?php
+$fichier=fopen("file.txt","r");
+$j=0;
+$i=0;
+while(!feof($fichier))
+{
+    $ligne=fgets($fichier,255);
+    if(!empty($ligne) ) $t=explode("|", $ligne);
+    echo "<p>le client $i<p>";
+    foreach($i as $j)
+    {
+        echo "  <hr>$j<hr>"; 
+    }   
+$i++;
+    
+}
+fclose($fichier);
+?>
